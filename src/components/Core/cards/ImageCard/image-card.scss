@@ -1,0 +1,72 @@
+.contentCard {
+    height: 256px;
+	width: 260px;
+	background-color:#5ad8a3;
+	display:inline-block;
+	position:relative;
+	cursor:pointer;
+	overflow:hidden;
+	color:white;
+	transition: all 0.4s ease-out;
+	
+		&:hover {
+		box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
+		transform:scale(1.01);  
+	}
+
+    &-image {
+		height:100%;
+		width:100%;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    }
+
+    &-text{
+		position:absolute;
+		padding: 36px 23px;
+		color: white;
+		text-align: initial;
+    }
+
+    &-title {
+		color: white;
+		font-weight: 300;
+		margin: 13px 0;
+		text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+		color: white;
+		font-size: 25px;
+		font-family: system-ui;
+    }  
+}
+
+.info {
+	opacity:0;
+	color: white;
+	transform: translateY(147px);
+	transition: all 0.4s ease-in-out;
+	
+	&-subtitle{
+		color: white;
+	}
+
+	&-written {
+		overflow: hidden; 
+		text-overflow: ellipsis; 
+		-webkit-line-clamp: 3;
+		display: -webkit-box; 
+		-webkit-box-orient: vertical;
+    	font-size: 15.9px;
+    	line-height: 30px;
+	}
+
+}
+
+.contentCard:hover img{
+	opacity: 0.2;
+}
+
+.contentCard:hover .info{
+	opacity:1;
+	transform: translateY(0);
+}
