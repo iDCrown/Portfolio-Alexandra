@@ -1,0 +1,37 @@
+.button-content {
+	width: auto;
+	height: 2.5em;
+	display: inline-block;
+	background-image: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 28px;
+	font-size: 0.8em;
+
+	a {
+		text-decoration: none;
+		border-bottom: none;
+		transition: none;
+	}
+
+}
+
+.dark {
+	background-color: #49bd9f;
+		color: #fffced;
+
+	&:hover{
+		background-color: #fff8dc;
+    	color: #1a886a;
+	}
+}
+
+.light {
+	background-color: #fff8dc;
+    color: #1a886a;
+
+	&:hover {
+		background-color: #49bd9f;
+		color: #fffced;
+	}
+}
