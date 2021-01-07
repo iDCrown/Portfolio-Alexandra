@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import Nav from './Nav';
 import TopNav from './TopNav';
 import config from '../../../config';
-const pic = require('../../assets/images/avatar.png');
+import PropTypes from 'prop-types'
 
-export default function SideBar({ sections = [], resume = {} }) {
+ function SideBar({ sections = [], resume = {}, authorName, heading, onClick  }) {
   const [headerOpen, toggleHeader] = useState(false);
+
   return (
     <div className={`${headerOpen ? 'header-visible' : ' '}`}>
       <TopNav
@@ -17,24 +18,19 @@ export default function SideBar({ sections = [], resume = {} }) {
       <div id="header">
         <div className="top">
           <Header
-            avatar={pic}
-            title={config.authorName}
-            heading={config.heading}
+            title={authorName}
+            heading={heading}
           />
-          <Nav sections={sections} resume={resume} />
+          <Nav  sections={sections} resume={resume} onClick={onClick} />
         </div>
         <Footer socialLinks={config.socialLinks} />
       </div>
-
-      {/* <section id="header">
-        <Header
-          avatar={pic}
-          title={config.authorName}
-          heading={config.heading}
-        />
-        <Nav sections={sections} />
-        <Footer socialLinks={config.socialLinks} />
-      </section> */}
     </div>
   );
 }
+
+SideBar.propTypes = {
+  onClick: PropTypes.func,
+}
+
+export default memo(SideBar);

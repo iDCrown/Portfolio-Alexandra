@@ -1,63 +1,38 @@
-import React from 'react';
+import React,{memo} from 'react';
 import PropTypes from 'prop-types';
 
 // components
-
-import Button from '../../components/Base/Button'
+import renderRichText from '../../components/Base/RichText'
 
 // style
 import './contact.scss';
 
-const Contact = ({ id, title, formtitle, subtitle, formsubtitle, buttontext }) => (
+import SocialLink from '../../components/Base/SocialLinks';
+
+const Contact = ({ id, title, content, facebook, instagram, linkedin  }) => {
+  const ContentText = renderRichText(JSON.parse(content.raw));
+  return(
 		<section id={ id } className="four container-contact ">
 			<div className="infocontent">
 				<h1 className="infocontent-h1">{title}</h1>
-				<h2 className="infocontent-h2">{subtitle}</h2>
-				<h3 className="infocontent-h3">{formsubtitle}</h3>
-				<p>
-				Do you wanna talk to me about a project collaboration?
-				</p>
-				<br/>
-				<p>
-				You can send me a message to malexcob@gmail.com or fill up the form below and get in
-touch:
-				</p>
+        <div className="infocontent-p">
+				  {ContentText}
+        </div>
+        <div className="icons">
+          <SocialLink iconstyle="icons-icon" linkedin={linkedin} facebook={facebook} instagram={instagram}/>
+        </div>
 			</div>
 
-			<div className="formcontent">
-				<h1 className="formcontent-h1">{formtitle}</h1>
-				<form method="post" action="#">
-						<div className="form-input">
-							<div className=" divform">
-								<input className="divform-persondata" type="text" name="name" placeholder="Name" />
-							</div>
-							<div className=" divform">
-								<input className="divform-persondata" type="text" name="email" placeholder="Email" />
-							</div>
-							<div className="divform">
-								<textarea className="divform-message" name="message" placeholder="Message" />
-							</div>
-							<div>
-								<a href=".">
-									<Button text={buttontext} theme="dark"/>
-								</a>
-							</div>
-						</div>
-				</form>
-			</div>
-
-			<div className="icons">
-
-			</div>
 	</section>
-)
-
-Contact.propTypes = {
-	title: PropTypes.string.isRequired,
-	formtitle: PropTypes.string.isRequired,
-	subtitle: PropTypes.string.isRequired,
-	formsubtitle: PropTypes.string.isRequired,
-	buttontext: PropTypes.string.isRequired
+	)
 }
 
-export default Contact;
+Contact.propTypes = {
+	title: PropTypes.string,
+  content: PropTypes.object,
+  linkedin: PropTypes.string,
+  facebook: PropTypes.string,
+  instagram: PropTypes.string,
+}
+
+export default memo(Contact);

@@ -6,8 +6,8 @@ import './button.scss';
 
 // theme = light & dark
 
-const Button = ({ text, theme}) => (
-	<button className={`button-content ${theme}`}>
+const Button = ({ text, theme, onClick}) => (
+	<button onClick={onClick} onKeyDown="" className={`button-content ${theme}`}>
 		{text}
 	</button>
 
@@ -16,6 +16,7 @@ const Button = ({ text, theme}) => (
 Button.propTypes = {
 	text: PropTypes.string.isRequired,
 	theme: PropTypes.string.isRequired,
+	onClick: PropTypes.func,
 }
 
 export default Button;

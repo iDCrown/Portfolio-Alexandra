@@ -1,10 +1,45 @@
-
+@import '../../assets/sass/breakpoint.scss';
 
 
 .container-contact {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     padding: 3em;
+
+    @include breakpoint('wide') {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      padding: 3em;
+      height: 100vh;
+    }
+  
+    @include breakpoint('normal') {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      padding: 3em;
+      height: 100vh;
+    }
+  
+    @include breakpoint('narrow') {
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+      height: auto;
+    }
+  
+    @include breakpoint('<=narrower') {
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+      height: auto;
+    }
+  
+    @include breakpoint('<=mobile') {
+      display: flex;
+      flex-direction: column;
+      padding: 3em;
+      height: auto;
+    }
 }
 
 .infocontent {
@@ -15,11 +50,110 @@
     letter-spacing: 0.2px;
     flex-direction: column;
 
+    @include breakpoint('wide') {
+      width: 477px;
+
+      &-h1 {
+        font-size: 33px;
+      }
+
+      &-h2 {
+        font-size: 19px;
+      }
+
+      h3 {  
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 19px;
+      }
+    }
+  
+    @include breakpoint('normal') {
+      width: 477px;
+
+      &-h1 {
+        font-size: 33px;
+      }
+
+      &-h2 {
+        font-size: 19px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 19px;
+      }
+    }
+  
+    @include breakpoint('narrow') {
+      width: 635px;
+
+      &-h1 {
+        font-size: 33px;
+      }
+
+      &-h2 {
+        font-size: 19px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 19px;
+      }
+    }
+  
+    @include breakpoint('<=narrower') {
+      width: 635px;
+
+      &-h1 {
+        font-size: 32px;
+      }
+
+      &-h2 {
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  
+    @include breakpoint('<=mobile') {
+      width: 635px;
+
+      &-h1 {
+        font-size: 31px;
+      }
+
+      &-h2 {
+        font-size: 17px;
+      }
+
+      h3 {
+        font-size: 17px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+
   &-h1 {
     margin: 0 21px 0.6em -8px;
     color: #1e1e1e;
     font-weight: normal;
-    font-size: 33px;
     font-family: 'Montserrat', sans-serif;
     text-align: left;
     text-transform: uppercase;
@@ -32,26 +166,23 @@
     margin: 13px -7px 22px;
     color: #000;
     font-weight: normal;
-    font-size: 19px;
     letter-spacing: 0.2px;
     line-height: 1em;
   }
 
-  &-h3 {
+   h3 {
+    margin: 0px -6px 16px;
     text-align: left;
-    margin: -8px -7px 22px;
     color: #000;
     font-weight: normal;
-    font-size: 19px;
     line-height: 1.4em;
     letter-spacing: 0.4px;
   }
 
   p {
     text-align: left;
-    margin: -6px;
+    margin: 0px 0 13px 0;
     font-weight: 100;
-    font-size: 19px;
     color: #232323;
     line-height: 34px;
   }
@@ -72,6 +203,26 @@
       text-transform: uppercase;
       letter-spacing: 3px;
 
+      @include breakpoint('wide') {
+        font-size: 33px;
+      }
+    
+      @include breakpoint('normal') {
+        font-size: 33px;
+      }
+    
+      @include breakpoint('narrow') {
+        font-size: 33px;
+      }
+    
+      @include breakpoint('<=narrower') {
+        font-size: 31px;
+      }
+    
+      @include breakpoint('<=mobile') {
+        font-size: 31px;
+      }
+  
     }
   }
 
@@ -80,6 +231,26 @@
     flex-direction: column;
     margin: 34px 0 0 0;
     width: 78%;
+
+    @include breakpoint('wide') {
+      width: 78%;
+    }
+  
+    @include breakpoint('normal') {
+      width: 78%;
+    }
+  
+    @include breakpoint('narrow') {
+      width: 100%;
+    }
+  
+    @include breakpoint('<=narrower') {
+      width: 100%;
+    }
+  
+    @include breakpoint('<=mobile') {
+      width: 100%;
+    }
 
   }
 
@@ -108,5 +279,15 @@
       max-width: 100%;
       min-width: 100%;
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: end;
+
+    &-icon {
+      width: 28px;
+      margin: 12px;
     }
   }

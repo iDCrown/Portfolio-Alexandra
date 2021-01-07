@@ -1,22 +1,22 @@
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
 import Scroll from '../Scroll';
+import PropTypes from 'prop-types'
 
-
-export default function Nav({ sections = [], resume = {} }) {
+ function Nav({ sections = [], resume = {}, onClick }) {
+   console.log(onclick)
   return (
     <nav id="nav">
       <ul>
         <Scrollspy
           items={sections.map(s => s.id)}
           currentClassName="active"
-          offset={-300}
-        >
+          offset={-300}>
           {sections.map(s => {
             return (
-              <li key={s.id}>
+              <li onKeyDown="" onClick={onClick}>
                 <Scroll type="id" element={s.id}>
-                  <a href={s.id} id="top-link">
+                  <a key={s.id} href={s.id} >
                     <span className={`icon ${s.icon}`}>{s.name}</span>
                   </a>
                 </Scroll>
@@ -33,3 +33,9 @@ export default function Nav({ sections = [], resume = {} }) {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  onClick: PropTypes.func,
+}
+
+export default Nav
