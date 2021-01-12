@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Scroll from '../Scroll'
 
-export default function Footer({ title, heading, avatar }) {
+
+export default function Footer({ title, heading }) {
   return (
     <div id="logo">
-      <Link to="/">
-        <h1 id="title">{title}</h1>
-        <p>{heading}</p>
-      </Link>
+      <Scroll type="id" element={ 'top' }>
+        <a href="#top">
+          <h1 id="title">{title}</h1>
+          <p>{heading}</p>
+        </a>
+      </Scroll>
     </div>
   );
 }

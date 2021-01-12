@@ -20,11 +20,12 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             buttonlink
-            formsubtitle
-            formtitle
             subtitle
             title
             buttontext
+            linkedin
+            facebook
+            instagram
             content {
               raw
             }
@@ -34,6 +35,23 @@ exports.createPages = ({ graphql, actions }) => {
               }
               title
               id
+            }
+            projects {
+              carousel {
+                file {
+                  url
+                }
+              }
+              content {
+                raw
+              }
+              id
+              title
+              front {
+                file {
+                  url
+                }
+              }
             }
             slug
           }
