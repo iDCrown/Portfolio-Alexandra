@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{memo} from 'react';
 import PropTypes from 'prop-types'
 
 // components
@@ -8,17 +8,19 @@ import renderRichText from '../../components/Base/RichText';
 import './about.scss'
 
 
-const About = ({ id, title, subtitle, image }) => {
+const About = ({ id, title, subtitle, image, content }) => {
+  console.log(content)
+  const ContentText = renderRichText(JSON.parse(content.raw));
     return (
       <section id={ id } className="content-about">
         <div className="about">
           <h1 className="about-h1">{title}</h1>
           <h2 className="about-h2">{subtitle}</h2>
-           
+         {ContentText}
         </div>
-        <div className="contentainer-image-about">
-          <div className="content-image">
-            <img src={image} alt="" className="about-image" />
+        <div className="contentainerimageabout">
+          <div className="contentainerimageabout-content-image">
+            <img src={image} alt="" className="contentainerimageabout-about-image" />
           </div>
         </div>
       </section>
@@ -31,6 +33,7 @@ About.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  content: PropTypes.object,
 }
 
-export default About; 
+export default memo(About); 

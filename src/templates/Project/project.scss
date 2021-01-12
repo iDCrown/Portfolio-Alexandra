@@ -1,0 +1,102 @@
+@import '../../assets/sass/breakpoint.scss';
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(2, 58% 42%);
+  grid-gap: 1.4em;
+  padding: 1.7em 1em 2em 2em;
+
+  @include breakpoint('wide') {
+  height: 100vh;
+  }
+
+  @include breakpoint('normal') {
+  height: 100vh;
+  }
+
+  @include breakpoint('narrow') {
+  height: 100vh;
+  }
+
+  @include breakpoint('<=narrower') {
+  height: 100vh;
+  }
+
+  @include breakpoint('<=mobile') {
+  height: 100vh;
+  }
+
+  &-contentext {
+    padding: 110px 68px 0 1px;
+    color: black;
+    text-align: justify;
+  }
+
+  h3 {
+    font-size: 10.8px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: -17px;
+    text-align: initial;
+    @include breakpoint('wide') {
+      font-size: 10.8px;
+    }
+  
+    @include breakpoint('normal') {
+      font-size: 10.8px;
+    }
+  
+    @include breakpoint('narrow') {
+      font-size: 13.8px;
+    }
+  
+    @include breakpoint('<=narrower') {
+      font-size: 11.8px;
+    }
+  
+    @include breakpoint('<=mobile') {
+      font-size: 12.8px;
+    }
+  }
+
+  h1 {
+    margin: 1em 0 2.2em 0;
+    text-align: initial;
+  @include breakpoint('wide') {
+        width: 960px;
+      }
+  
+      @include breakpoint('normal') {
+        width: 920px;
+      }
+  
+      @include breakpoint('narrow') {
+        width: 80%;
+        padding: 0 2.7em;
+      }
+  
+      @include breakpoint('<=narrower') {
+        width: 100%;
+        padding: 0 2.5em;
+      }
+  
+      @include breakpoint('<=mobile') {
+        width: 384px;
+        padding: 0 40px;
+      }
+  }
+
+  h2 {
+    margin: 1.5em 0 0.5em 0;
+  }
+
+  p {
+   margin: 0;
+   line-height: 20px;
+   font-size: 16px;
+  }
+
+  ul {
+    margin: 0em ;
+  }
+}
