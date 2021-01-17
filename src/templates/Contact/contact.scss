@@ -1,42 +1,33 @@
 @import '../../assets/sass/breakpoint.scss';
-
+@import '../../assets/sass/colors.scss'; 
 
 .container-contact {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
+    display: flex;
+    justify-content: center;
     padding: 3em;
+    background-color: $cream-color;
 
     @include breakpoint('wide') {
-      display: grid;
-      grid-template-columns: repeat(2, 50%);
       padding: 3em;
       height: 100vh;
     }
   
     @include breakpoint('normal') {
-      display: grid;
-      grid-template-columns: repeat(2, 50%);
       padding: 3em;
       height: 100vh;
     }
   
     @include breakpoint('narrow') {
-      display: flex;
-      flex-direction: column;
       padding: 3em;
       height: auto;
     }
   
     @include breakpoint('<=narrower') {
-      display: flex;
-      flex-direction: column;
       padding: 3em;
       height: auto;
     }
   
     @include breakpoint('<=mobile') {
-      display: flex;
-      flex-direction: column;
       padding: 3em;
       height: auto;
     }
@@ -46,19 +37,19 @@
     margin: 81px auto 5px auto;
     max-width: 100%;
     width: 477px;
+    height: 80%;
+    background-color: white;
     display: flex;
     letter-spacing: 0.2px;
     flex-direction: column;
+    padding: 1em 2em;
+    box-shadow: 0 0 20px 0px #00000029;
 
     @include breakpoint('wide') {
       width: 477px;
 
       &-h1 {
         font-size: 33px;
-      }
-
-      &-h2 {
-        font-size: 19px;
       }
 
       h3 {  
@@ -77,10 +68,6 @@
         font-size: 33px;
       }
 
-      &-h2 {
-        font-size: 19px;
-      }
-
       h3 {
         font-size: 19px;
       }
@@ -95,10 +82,6 @@
 
       &-h1 {
         font-size: 33px;
-      }
-
-      &-h2 {
-        font-size: 19px;
       }
 
       h3 {
@@ -117,10 +100,6 @@
         font-size: 32px;
       }
 
-      &-h2 {
-        font-size: 18px;
-      }
-
       h3 {
         font-size: 18px;
       }
@@ -137,10 +116,6 @@
         font-size: 31px;
       }
 
-      &-h2 {
-        font-size: 17px;
-      }
-
       h3 {
         font-size: 17px;
       }
@@ -151,143 +126,47 @@
     }
 
   &-h1 {
-    margin: 0 21px 0.6em -8px;
+    margin: 2.4em 0 1em 0;
     color: #1e1e1e;
-    font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
-    text-align: left;
     text-transform: uppercase;
     letter-spacing: 3px;
 
   }
-  
-  &-h2 {
-    text-align: left;
-    margin: 13px -7px 22px;
-    color: #000;
-    font-weight: normal;
-    letter-spacing: 0.2px;
-    line-height: 1em;
-  }
 
    h3 {
     margin: 0px -6px 16px;
-    text-align: left;
     color: #000;
-    font-weight: normal;
     line-height: 1.4em;
+    font-weight: 600;
     letter-spacing: 0.4px;
   }
 
   p {
-    text-align: left;
     margin: 0px 0 13px 0;
     font-weight: 100;
     color: #232323;
     line-height: 34px;
   }
+
+  hr {
+    margin: 25px auto 24px auto;
+    border: 1px solid rgb(0, 0, 0);
+    width: 20%;
+  }
 }
-
-.formcontent {
-    display: flex;
-    flex-direction: column;
-    margin: 80px 0 0 0;
-
-    &-h1 {
-      margin: 0 21px 0em -1px;
-      color: #1e1e1e;
-      font-weight: normal;
-      font-size: 33px;
-      font-family: 'Montserrat', sans-serif;
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-
-      @include breakpoint('wide') {
-        font-size: 33px;
-      }
-    
-      @include breakpoint('normal') {
-        font-size: 33px;
-      }
-    
-      @include breakpoint('narrow') {
-        font-size: 33px;
-      }
-    
-      @include breakpoint('<=narrower') {
-        font-size: 31px;
-      }
-    
-      @include breakpoint('<=mobile') {
-        font-size: 31px;
-      }
-  
-    }
-  }
-
-  .form-input {
-    display: flex;
-    flex-direction: column;
-    margin: 34px 0 0 0;
-    width: 78%;
-
-    @include breakpoint('wide') {
-      width: 78%;
-    }
-  
-    @include breakpoint('normal') {
-      width: 78%;
-    }
-  
-    @include breakpoint('narrow') {
-      width: 100%;
-    }
-  
-    @include breakpoint('<=narrower') {
-      width: 100%;
-    }
-  
-    @include breakpoint('<=mobile') {
-      width: 100%;
-    }
-
-  }
-
-  .divform {
-    width: 100%;
-    padding: 0 0 22px 0;
-    
-
-    &-persondata {
-      width: 100%;
-      padding: 0 0 22px 0;
-      border: 1px solid rgb(219, 219, 219);
-      box-shadow: white 0px 0px;
-      line-height: 1.4em;
-      transition: all 0.3s ease-in-out;
-      font-size: 15px;
-    }
-
-    &-message {
-      border: 1px solid rgb(219, 219, 219);
-      box-shadow: white 0px 0px;
-      transition: all 0.1s cubic-bezier(0.13, 0.12, 0.9, 0.88) 0s;
-      margin: 0px;
-      height: 187px;
-      font-size: 15px;
-      max-width: 100%;
-      min-width: 100%;
-      transition: all 0.3s ease-in-out;
-    }
-  }
 
   .icons {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+
+    a:hover {
+      color:black;
+      cursor: pointer;
+    }
 
     &-icon {
-      width: 28px;
-      margin: 12px;
+      width: 29px;
+      margin: 16px;
+      font-size: 26px;
     }
   }

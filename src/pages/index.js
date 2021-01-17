@@ -17,14 +17,14 @@ const sections = [
   { id: 'top', name: 'Home', icon: 'fa-home' },
   { id: 'body', name: 'Portfolio', icon: 'fa-th' },
   { id: 'about', name: 'About', icon: 'fa-user' },
-  { id: 'blog', name: 'Blog', },
-  { id: 'contact', name: 'Contact', icon: 'fa-LogoNodejs' },
+  { id: 'blog', name: 'Blog', icon:' fa-address-book'},
+  { id: 'contact', name: 'Contact', icon: 'fa-envelope-o' }, 
 ];
 
 const resume = {
   url: "https://drive.google.com/file/d/1I4Y-wV1DfHwd0LrVcdwvGY6ecvlgv0Nm/view?usp=sharing ",
   name: 'Resume',
-  icon: ""
+  icon: 'fa-file-text-o'
 }
 
 
@@ -37,13 +37,14 @@ const IndexPage = (props) => {
   const about = props.data.allContentfulPage.edges[3].node
   const contact = props.data.allContentfulPage.edges[1].node
 
-  
   const toggle = useCallback((id) => {
     const mProject = portfolio.projects.filter((item) => item.id === id)[0];
     setProject(mProject);
   });
 
   console.log(!project)
+
+  const click = () => setProject(false)
 
   if (!project) {
     return(
@@ -70,10 +71,10 @@ const IndexPage = (props) => {
   else {
     return(
       <Layout>
-        <SideBar onClick={() => setProject(false)}  sections={sections} resume={resume} authorName="MALEXCOB" heading="SEO content writer and linguist" />
+        <SideBar className="activeport" onClick={click}  sections={sections} resume={resume} authorName="MALEXCOB" heading="SEO content writer and linguist" />
         <div id="main">
-          <Home id="top" onClickHome={() => setProject(false)} title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
-          <Project id="body" carousel={project.carousel} content={project.content} title={project.title}/>
+          <Home id="top" onClickHome={click} title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
+          <Project id="body" onClick={click} carousel={project.carousel} content={project.content} title={project.title}/>
           <About id="about" title={about.title} subtitle={about.subtitle} image={about.images[0].file.url} content={about.content} />
           <Blog id="blog" title={blog.title} buttontext={blog.buttontext} buttonlink={blog.buttonlink} content={blog.content}/>
           <Contact id="contact" 

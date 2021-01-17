@@ -1,88 +1,106 @@
 @import '../../assets/sass/breakpoint.scss';
 
 .project {
-  display: grid;
-  grid-template-columns: repeat(2, 58% 42%);
-  grid-gap: 1.4em;
-  padding: 1.7em 1em 2em 2em;
 
   @include breakpoint('wide') {
-  height: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 58% 42%);
+    grid-gap: 1em;
+    padding: 2.7em 1em 2em 2em;
   }
 
   @include breakpoint('normal') {
-  height: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 58% 42%);
+    grid-gap: 1em;
+    padding: 2.7em 1em 2em 2em;
   }
 
   @include breakpoint('narrow') {
-  height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2.7em 1em 2em 2em;
   }
 
   @include breakpoint('<=narrower') {
-  height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 1em 4em 2em;
   }
 
   @include breakpoint('<=mobile') {
-  height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 1em 4em 2em;
   }
 
   &-contentext {
-    padding: 110px 68px 0 1px;
     color: black;
     text-align: justify;
-  }
 
-  h3 {
-    font-size: 10.8px;
-    letter-spacing: 4px;
-    font-weight: 500;
-    margin-bottom: -17px;
-    text-align: initial;
     @include breakpoint('wide') {
-      font-size: 10.8px;
+      padding: 84px 68px 0 1px;
     }
-  
+
     @include breakpoint('normal') {
-      font-size: 10.8px;
+      padding: 84px 68px 0 1px;
     }
-  
+
     @include breakpoint('narrow') {
-      font-size: 13.8px;
+      padding: 84px 68px 0 1px;
     }
-  
+
     @include breakpoint('<=narrower') {
-      font-size: 11.8px;
+      padding: 84px 21px 0 1px;
     }
-  
+
     @include breakpoint('<=mobile') {
-      font-size: 12.8px;
+      padding: 84px 21px 0 1px;
     }
   }
+  
+  
 
-  h1 {
-    margin: 1em 0 2.2em 0;
+  .h1  {
     text-align: initial;
-  @include breakpoint('wide') {
-        width: 960px;
+    letter-spacing: 2px;
+    font-size: 27px;
+    cursor: pointer;
+    &:hover > .volver  {
+      animation: mover 1s;
+      animation-iteration-count: inherit !important;
+      animation-fill-mode: forwards;
+      transition: all 0.5s;
+    
+    }
+      @include breakpoint('wide') {
+        font-size: 26px;
+        margin: 0em 0 1.7em 0;
       }
   
       @include breakpoint('normal') {
-        width: 920px;
+        font-size: 26px;
+        margin: 0em 0 1.7em 0;
       }
   
       @include breakpoint('narrow') {
-        width: 80%;
-        padding: 0 2.7em;
+        font-size: 26px;
+        margin: 0em 0 1.7em 0;
       }
   
       @include breakpoint('<=narrower') {
-        width: 100%;
-        padding: 0 2.5em;
+        font-size: 25px;
+        margin: 0em 0 .8em 0;
       }
   
       @include breakpoint('<=mobile') {
-        width: 384px;
-        padding: 0 40px;
+        font-size: 23px;
+        margin: 0em 0 -2em 0;
       }
   }
 
@@ -99,4 +117,40 @@
   ul {
     margin: 0em ;
   }
+
+  .volver {
+    width: 46px;
+    float: left;
+    cursor: pointer;
+    animation: movereverse 1s;
+    transition: all 0.5s;
+    font-size: 35px;
+    animation-fill-mode:both;
+    
+    &:hover {
+      animation: mover 1s;
+      animation-iteration-count: inherit !important;
+      animation-fill-mode: forwards;
+      transition: all 0.5s;
+    }
+   
+    @keyframes mover {
+      0% {
+        transform: translateX(12px);
+      }
+      100% {
+        transform: translateX(-1px);
+      }
+    }
+    
+    @keyframes movereverse {
+      0% {
+        transform: translateX(-1px);
+      }
+      100% {
+        transform: translateX(12px);
+      }
+    }
+  }
 }
+

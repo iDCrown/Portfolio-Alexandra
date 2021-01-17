@@ -3,8 +3,9 @@ import Scrollspy from 'react-scrollspy';
 import Scroll from '../Scroll';
 import PropTypes from 'prop-types'
 
- function Nav({ sections = [], resume = {}, onClick }) {
-   console.log(onclick)
+ function Nav({ sections = [], resume = {}, onClick, className }) {
+   console.log()
+
   return (
     <nav id="nav">
       <ul>
@@ -14,10 +15,14 @@ import PropTypes from 'prop-types'
           offset={-300}>
           {sections.map(s => {
             return (
-              <li onKeyDown="" onClick={onClick}>
+              <li className={className} key={s.id}>
                 <Scroll type="id" element={s.id}>
-                  <a key={s.id} href={s.id} >
-                    <span className={`icon ${s.icon}`}>{s.name}</span>
+                  <a 
+                    href={s.id} 
+                  >
+                    <span  onKeyDown={onClick} 
+                    role="button" tabIndex={0} 
+                    onClick={onClick} className={`icon ${s.icon}`}>{s.name}</span>
                   </a>
                 </Scroll>
               </li>
@@ -36,6 +41,7 @@ import PropTypes from 'prop-types'
 
 Nav.propTypes = {
   onClick: PropTypes.func,
+  className: PropTypes.string,
 }
 
 export default Nav

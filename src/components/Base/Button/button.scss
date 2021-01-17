@@ -1,37 +1,71 @@
-.button-content {
-	width: auto;
-	height: 2.5em;
-	display: inline-block;
-	background-image: none;
-	border: none;
-	cursor: pointer;
-	border-radius: 28px;
-	font-size: 0.8em;
+@import '../../../assets/sass/colors.scss'; 
 
-	a {
-		text-decoration: none;
-		border-bottom: none;
-		transition: none;
-	}
+.buttoncontent{
+  background: $light-button;
+  color:$text-button;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 0.4em 1em 0.4em 1em;
+  border: none;
+  transition: all 0.5s;
+  border-radius: 50px;
+  width: auto;
+	position: relative;
 
+  &-icon {
+    opacity: 0;
+    transition: all 0.5s;
+    animation: arrow-reverse 0.5s;
+    top: 0px;
+    position: relative;
+  }
+
+  &:hover &-icon {
+    display: inline;
+    position: relative;
+    margin-left: 14px;
+    top: 0px;
+    opacity: 1;
+    animation: arrow-in 0.5s;
+    animation-iteration-count: inherit !important;
+    transition: all 0.5s;
+    font-size: 27px;
+  }
+  
+  &:hover {
+    transition: all 0.5s;
+    background: $light-button;
+    border-radius: 50px;
+    box-shadow: -5px 5px 0px $text-button;
+    padding: 0.4em 1em 0.4em .9em;
+    
+    
+  }
+  span {
+    float: left;
+    margin: 17px 0;
+    line-height: 0;
+    font-size: 19px;
+  }
+}
+@keyframes arrow-in {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.dark {
-	background-color: #49bd9f;
-		color: #fffced;
-
-	&:hover{
-		background-color: #fff8dc;
-    	color: #1a886a;
-	}
+@keyframes arrow-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
 }
 
-.light {
-	background-color: #fff8dc;
-    color: #1a886a;
 
-	&:hover {
-		background-color: #49bd9f;
-		color: #fffced;
-	}
-}
+
+  

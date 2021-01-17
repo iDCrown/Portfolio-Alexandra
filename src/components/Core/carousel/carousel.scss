@@ -1,9 +1,66 @@
+@import '../../../assets/sass/colors.scss'; 
+@import '../../../assets/sass/breakpoint.scss';
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+	display: none !important;
+}
+
+.alice-carousel__dots {
+  margin: 30px 3px 5px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  & > li {
+    display: inline-block;
+  }
+
+  &-item:not(.__custom) {
+    width: 10px;
+    height: 10px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+    &:not(:last-child) {
+      margin-right: 20px;
+      margin-top: 41px;
+    }
+
+    &:hover,
+    &.__active {
+      background-color: $mustard-color;
+    }
+  }
+}
+
 .carousel {
     width: 100%;
 
    &-sliderimg {
 		width: 100%;
-    height: auto;
+    height: 584px;
     object-fit: contain;
+
+    @include breakpoint('wide') {
+      height: 587px;
+    }
+    
+    @include breakpoint('normal') {
+      height: 555px;
+    }
+  
+    @include breakpoint('narrow') {
+      height: 449px;
+    }
+  
+    @include breakpoint('<=narrower') {
+      height: 531px;
+    }
+  
+    @include breakpoint('<=mobile') {
+      height: 407px;
+    }
 	 } 
 }

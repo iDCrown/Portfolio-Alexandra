@@ -2,21 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // icons
-import Linkedin from '../../../assets/images/linkedin.svg'
-import Facebook from '../../../assets/images/facebook.svg'
-import Instagram from '../../../assets/images/instagram.svg'
 
 const SocialLinks = ({ iconstyle, linkedin, facebook, instagram  }) => (
   <>
-      <a href={linkedin}>
-        <img src={Linkedin} alt="" className={iconstyle} />
-      </a>
-      <a href={facebook}>
-        <img src={Facebook} alt="" className={iconstyle} />
-      </a>
-      <a href={instagram}>
-        <img src={Instagram} alt="" className={iconstyle} />
-      </a>
+    <a href={linkedin} target="_blank" rel="noreferrer">
+      <i className={`fa fa-linkedin ${iconstyle}`} aria-hidden="true"></i>
+    </a>
+    <a href={facebook} target="_blank" rel="noreferrer">
+      <i className={`fa fa-facebook ${iconstyle}`} aria-hidden="true"></i>
+    </a>
+    <a href={instagram} target="_blank" rel="noreferrer">
+      <i className={`fa fa-instagram ${iconstyle}`} aria-hidden="true"></i>
+    </a>
   </>
 )
 

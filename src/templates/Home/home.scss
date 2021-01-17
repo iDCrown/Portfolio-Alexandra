@@ -37,7 +37,7 @@
       }
   
       @include breakpoint('<=mobile') {
-        width: 384px;
+        width: 100%;
         padding: 0 40px;
       }
     
@@ -48,25 +48,25 @@
 		
     @include breakpoint('wide') {
 			&-h1 {
-				font-size: 38px;
+				font-size:  39px;
 			}
 						
 			&-h2 {
-				font-size: 21px;
+				font-size: 22px;
 			}
 
 			&-p {
-				font-size: 20px;
+				font-size: 20px !important;
 			}
 		}
 		
 		@include breakpoint('normal') {
 			&-h1 {
-				font-size: 37px;
+				font-size: 39px;
 			}
 
 			&-h2 {
-				font-size: 20px;
+				font-size: 22px;
 			}
 
 
@@ -77,25 +77,11 @@
 		
 		@include breakpoint('narrow') {
 			&-h1 {
-				font-size: 36px;
+				font-size: 38px;
 			}
 
 			&-h2 {
-				font-size: 20px;
-			}
-
-			&-p {
-				font-size: 20px;
-			}
-		}
-		
-		@include breakpoint('<=narrower') {
-			&-h1 {
-				font-size: 35px;
-			}
-
-			&-h2 {
-				font-size: 20px;
+				font-size: 21px;
 			}
 
 			&-p {
@@ -103,17 +89,31 @@
 			}
 		}
 		
-		@include breakpoint('<=mobile') {
+		@include breakpoint('<=narrower') {
 			&-h1 {
-				font-size: 29px;
+				font-size: 36px;
 			}
 
 			&-h2 {
-				font-size: 18px;
+				font-size: 19px;
 			}
 
 			&-p {
-				font-size: 16px;
+				font-size: 18px;
+			}
+		}
+		
+		@include breakpoint('<=mobile') {
+			&-h1 {
+				font-size: 31px;
+			}
+
+			&-h2 {
+				font-size: 20px;
+			}
+
+			&-p {
+				font-size: 18px;
 			}
 		}
 		
