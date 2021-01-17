@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './image-card.scss';
 
 const ImageCard = ({ url, title, onClick, id }) => (
-    <div className="contentCard" onKeyDown="" onClick={() => onClick(id)}>
+    <div className="contentCard" tabIndex={0} role="button" onKeyDown={() => onClick(id)} onClick={() => onClick(id)}>
       <img className="contentCard-image" src={url} alt="" />
       <div className="contentCard-text">
         <div className="info">

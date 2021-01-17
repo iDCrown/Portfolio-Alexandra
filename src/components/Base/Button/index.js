@@ -4,18 +4,18 @@ import PropTypes from 'prop-types'
 // style
 import './button.scss';
 
-// theme = light & dark
-
-const Button = ({ text, theme, onClick}) => (
-	<button onClick={onClick} onKeyDown="" className={`button-content ${theme}`}>
-		{text}
+const Button = ({ text, onClick}) => (
+	<button onClick={onClick} onKeyDown={onClick} className="buttoncontent">
+		<span>
+			{text}
+		</span>
+		<span className="fa fa-angle-right buttoncontent-icon"></span>
 	</button>
 
 )
 
 Button.propTypes = {
-	text: PropTypes.string.isRequired,
-	theme: PropTypes.string.isRequired,
+	text: PropTypes.string,
 	onClick: PropTypes.func,
 }
 

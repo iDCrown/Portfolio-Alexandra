@@ -21,7 +21,7 @@ const Blog = ({ id, title, buttontext, buttonlink, content }) => {
 				<a target="_blank" rel="noreferrer" href={buttonlink}>
 					<Button text={buttontext} theme="dark"/>
 				</a>
-				</div>
+			</div>
 		</section>
 	)
 }

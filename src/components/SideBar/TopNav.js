@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
-export default function TopNav({ title, onMenuClick = () => {} }) {
+function TopNav({ onMenuClick = () => {}, icons }) {
   return (
     <div id="headerToggle">
       <a
@@ -11,8 +12,14 @@ export default function TopNav({ title, onMenuClick = () => {} }) {
           onMenuClick();
         }}
       >
-        {' '}
+        {icons}
       </a>
     </div>
   );
 }
+
+TopNav.propTypes = {
+  icons: PropTypes.object,
+}
+
+export default TopNav

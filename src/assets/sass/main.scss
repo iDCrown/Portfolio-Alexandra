@@ -6,7 +6,8 @@
 @import 'libs/html-grid';
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maitree&display=swap');
+@import './colors.scss';
 
 /*
 	Prologue by HTML5 UP
@@ -23,6 +24,8 @@
 	narrower:  ( 737px,  960px  ),
 	mobile:    ( null,   736px  ),
 ));
+
+
 
 // Reset.
 // Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
@@ -109,11 +112,17 @@
 
 	body {
 		background: #fff;
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Maitree', serif;
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75em;
 		color: #888;
+		overflow-y: scroll;
+		&::-webkit-scrollbar {
+			width: 8px;     /* Tamaño del scroll en vertical */
+			height: 8px;    /* Tamaño del scroll en horizontal */
+			display: none;  /* Ocultar scroll */
+		}
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -126,7 +135,7 @@
 	}
 
 	input, textarea, select {
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Maitree', serif;
 		font-size: 16ppt;
 		font-weight: 300;
 		line-height: 1.75em;
@@ -480,7 +489,7 @@
 			text-align: left;
 			padding: 0.5em 1em 0.5em 1em;
 			color: #fff;
-			background: #222729 url('../images/overlay.png');
+
 		}
 
 		thead {
@@ -576,7 +585,7 @@
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 322px;
+		width: 333px;
 
 		.top {
 			@include vendor('flex-grow', '1');
@@ -608,7 +617,7 @@
 
 	#logo {
 		position: relative;
-		margin: 1.75em 1.5em 1.5em 1.5em;
+		margin: 2.75em 1.5em 1.5em 1.5em;
 		min-height: 48px;
 		cursor: default;
 
@@ -616,16 +625,19 @@
 			position: relative;
 			color: #fff;
 			font-weight: 600;
-			font-size: 1em;
+			font-size: 27px;
+			margin: .7em;
+			text-align: center;
 			line-height: 1em;
 		}
 
 		p {
 			position: relative;
 			display: block;
-			font-size: 0.6em;
+			font-size: 15px;
 			color: rgba(255, 255, 255, 0.5);
-			line-height: 1.25em;
+			line-height: 1em;
+			text-align: center;
 			margin: 0.5em 0 0 0;
 		}
 
@@ -637,6 +649,7 @@
 	}
 
 	#nav {
+		margin: 3em 0;
 		ul {
 			list-style: none;
 			padding-left: 0;
@@ -645,17 +658,54 @@
 			li {
 				padding-left: 0;
 
-				&.active {
-
+				&.activeport:nth-child(0n+2)  {
 					a {
 						background: rgba(0, 0, 0, 0.15);
 						box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
 						color: #fff;
 
 						span:before {
-							color: #e27689;
+							color:$mustard-color;
 						}
 					}
+				}
+				
+				&.active:first-child{
+					a {
+						background: rgba(0, 0, 0, 0.15);
+						box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+						color: #fff;
+
+						span:before {
+							color:$mustard-color;
+						}
+					}
+				}
+
+				&:focus-within {
+					a {
+						background: rgba(0, 0, 0, 0.15);
+						box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+						color: #fff;
+
+						span:before {
+							color:$mustard-color;
+						}
+					}
+				}
+
+				&:hover {
+					a {
+						background: rgba(0, 0, 0, 0.15);
+						box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+						color: #fff;
+
+						span:before {
+							color:$mustard-color;
+						}
+					}
+
+				
 				}
 
 				a {
@@ -721,7 +771,8 @@
 /* Main */
 
 	#main {
-		margin-left: 322px;
+		margin-left: 333px;
+		
 
 		> section {
 			margin: 0;
@@ -761,9 +812,8 @@
 			}
 
 			&.one {
-				background-color: #81918E;
-				background-image: url('../images/banner.jpg');
-			}
+				background-color: #FFF;
+			} 
 
 			&.two {
 				background-color: #f5fafa;
@@ -787,12 +837,27 @@
 
 			body, input, textarea, select {
 				font-size: 16pt;
+				&::-webkit-scrollbar-thumb {
+					background:$mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: $mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar {
+					width: 8px;     /* Tamaño del scroll en vertical */
+					height: 8px;    /* Tamaño del scroll en horizontal */
+					display: none;  /* Ocultar scroll */
+				}
 			}
 
 		/* Header */
 
 			#header {
-				width: 300px;
+				width: 333px;
 			}
 
 		/* Footer */
@@ -804,7 +869,7 @@
 		/* Main */
 
 			#main {
-				margin-left: 300px;
+				margin-left: 333px;
 			}
 
 	}
@@ -812,6 +877,14 @@
 /* Normal */
 
 	@include breakpoint('normal') {
+		body {
+			overflow-y: scroll;
+			&::-webkit-scrollbar {
+				width: 8px;     /* Tamaño del scroll en vertical */
+				height: 8px;    /* Tamaño del scroll en horizontal */
+				display: none;  /* Ocultar scroll */
+			}
+		}
 
 		/* Main */
 
@@ -837,6 +910,22 @@
 
 			body, input, textarea, select {
 				font-size: 16pt;
+				overflow-y: scroll;
+				&::-webkit-scrollbar-thumb {
+					background:$mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: $mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar {
+					width: 8px;     /* Tamaño del scroll en vertical */
+					height: 8px; 
+					display: none;
+				}
 			}
 
 			.container {
@@ -845,25 +934,74 @@
 
 		/* Icons */
 
-			ul.icons {
-				li {
-					a {
-						width: 1.75em;
-					}
-				}
-			}
-
-		/* Item */
-
-			.item {
-				margin-bottom: 20px;
-			}
 
 		/* Header */
 
-			#header {
-				width: 20%;
+		#header {
+			@include vendor('backface-visibility', 'hidden');
+			@include vendor('transform', 'translateX(#{_size(header) * -1})');
+			@include vendor('transition', ('transform #{_duration(header)} ease'));
+			-webkit-overflow-scrolling: touch;
+			display: block;
+			height: 100%;
+			left: 0;
+			overflow-y: auto;
+			position: fixed;
+			top: 0;
+			width: _size(header);
+			z-index: _misc(z-index-base) + 2;
+			width: _size(header);
+			background: #222729 url('../images/overlay.png');
+			box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.125);
+
+			.top {
+				position: relative;
 			}
+
+			.bottom {
+				border-top: solid 1px rgba(255, 255, 255, 0.05);
+				box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+				padding-top: 2em;
+				margin-top: 2em;
+				position: relative;
+			}
+		}
+
+		
+		#headerToggle {
+			@include vendor('backface-visibility', 'hidden');
+			@include vendor('transition', 'transform #{_duration(header)} ease');
+			display: block;
+			height: 2.25em;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 3.25em;
+			z-index: _misc(z-index-base) + 1;
+
+			.toggle {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				outline: 0;
+				border: 0;
+				margin: .9em;
+
+				.menu {
+					color: #fff;
+					font-size: 25px;
+					background: #000000;
+					border-radius: 50%;
+					text-align: center;
+					display: block;
+					padding: 15px;
+					width: 55px;
+					height: 55px;
+				}
+			}
+		}
 
 			#logo {
 				.image {
@@ -872,27 +1010,6 @@
 				}
 			}
 
-			#nav {
-				ul {
-					li {
-						a {
-							font-size: 0.8em;
-							padding-top: 0.5em;
-							padding-bottom: 0.5em;
-
-							span {
-								padding-right: 2.25em;
-
-								&:before {
-									left: 100%;
-									margin-left: -1.25em;
-									line-height: 2.25em;
-								}
-							}
-						}
-					}
-				}
-			}
 
 		/* Footer */
 
@@ -919,7 +1036,26 @@
 		/* Basic */
 
 			html, body {
-				overflow-x: hidden;
+				overflow-y: scroll;
+				&::-webkit-scrollbar-thumb {
+					background:$mustard-color;
+					border-radius: 4px;
+				}
+				.container::-webkit-scrollbar-track {
+					background: #e1e1e1;
+					border-radius: 4px;
+				}
+				
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: $mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar {
+					width: 8px;     /* Tamaño del scroll en vertical */
+					height: 8px;    /* Tamaño del scroll en horizontal */ /* Ocultar scroll */
+				}
 			}
 
 			body, input, textarea, select {
@@ -1016,28 +1152,18 @@
 					height: 100%;
 					outline: 0;
 					border: 0;
+					margin: .9em;
 
-					&:before {
-						font-family: FontAwesome;
-						text-decoration: none;
-						font-style: normal;
-						font-weight: normal;
-						-webkit-font-smoothing: antialiased;
-						-moz-osx-font-smoothing: grayscale;
-						content: '\f0c9';
+					.menu {
 						color: #fff;
-						font-size: 18px;
-						line-height: 2.25em;
-						background: rgba(128, 136, 144, 0.5);
-						border-radius: 0.35em;
+						font-size: 25px;
+						background: #000000;
+						border-radius: 50%;
 						text-align: center;
-						position: absolute;
-						left: 0.5em;
-						top: 0.5em;
 						display: block;
-						width: 3.25em;
-						height: 2.25em;
-						line-height: 2.25em;
+						padding: 15px;
+						width: 55px;
+						height: 55px;
 					}
 				}
 			}
@@ -1092,6 +1218,20 @@
 
 			body, input, textarea, select {
 				font-size: 14pt;
+				&::-webkit-scrollbar-thumb {
+					background:$mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: $mustard-color;
+					border-radius: 4px;
+				}
+
+				&::-webkit-scrollbar {
+					width: 8px;     /* Tamaño del scroll en vertical */
+					height: 8px;    /* Tamaño del scroll en horizontal */
+				}
 			}
 
 			h2 {
