@@ -14,6 +14,7 @@ const Home = ({ id, title, subtitle, buttontext, image, content, onClickHome }) 
   return(
     <section id={ id } className=" cover home"> 
       <img className="home-img" src={image} alt=""/>
+      <div className="home-color"></div>
       <div className="containerhome">
         <div className="containerhome-contenthome">
           <h2 className="containerhome-contenthome-h2">

@@ -19,10 +19,9 @@
   &-item:not(.__custom) {
     width: 10px;
     height: 10px;
-
     cursor: pointer;
-
     border-radius: 50%;
+    
     &:not(:last-child) {
       margin-right: 20px;
       margin-top: 41px;
@@ -36,12 +35,12 @@
 }
 
 .carousel {
-    width: 100%;
+  width: 100%;
 
-   &-sliderimg {
-		width: 100%;
-    height: 584px;
-    object-fit: contain;
+  &-sliderimg {
+  width: 100%;
+  height: 584px;
+  object-fit: contain;
 
     @include breakpoint('wide') {
       height: 587px;
@@ -50,17 +49,17 @@
     @include breakpoint('normal') {
       height: 555px;
     }
-  
+
     @include breakpoint('narrow') {
       height: 449px;
     }
-  
+
     @include breakpoint('<=narrower') {
       height: 531px;
     }
-  
+
     @include breakpoint('<=mobile') {
       height: 407px;
     }
-	 } 
+  } 
 }

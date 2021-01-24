@@ -13,13 +13,13 @@ const Carousel = ({ images = [] }) => {
   return (
     <div className="carousel">
       <AliceCarousel infinite autoPlay autoPlayInterval="4000" >
-          {
-            images.map((img, id) => {
-              return(
-                <img src={img.file.url} key={id} alt="" className="carousel-sliderimg"/>
-              )
-            })
-          }
+        {
+          images.map((img, id) => {
+            return(
+              <img src={img.file.url} key={id} alt="" className="carousel-sliderimg"/>
+            )
+          })
+        }
       </AliceCarousel>
     </div>
   )

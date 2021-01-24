@@ -30,10 +30,11 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
     
-    result.data.allContentfulPage.edges.forEach(edge => {
+    result.data.allContentfulPage.edges.forEach((edge) => {
       createPage({
         path: `${edge.node.slug}`,
         component: portfolioPage,
+      
       })
     })
   })

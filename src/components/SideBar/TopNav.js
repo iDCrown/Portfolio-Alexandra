@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React,{ memo } from 'react';
+import PropTypes from 'prop-types';
 
 function TopNav({ onMenuClick = () => {}, icons }) {
   return (
@@ -22,4 +22,4 @@ TopNav.propTypes = {
   icons: PropTypes.object,
 }
 
-export default TopNav
+export default memo(TopNav)

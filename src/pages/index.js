@@ -13,6 +13,7 @@ import Contact from '../templates/Contact';
 import Blog from '../templates/Blog';
 import Project from '../templates/Project';
 
+// SideBar
 const sections = [
   { id: 'top', name: 'Home', icon: 'fa-home' },
   { id: 'body', name: 'Portfolio', icon: 'fa-th' },
@@ -24,32 +25,73 @@ const sections = [
 const resume = {
   url: "https://drive.google.com/file/d/1I4Y-wV1DfHwd0LrVcdwvGY6ecvlgv0Nm/view?usp=sharing ",
   name: 'Resume',
-  icon: 'fa-file-text-o'
+  icon: 'fa-file-text-o',
 }
 
+// Index
 
 const IndexPage = (props) => {
   const [project, setProject] = useState(false);
 
-  const home = props.data.allContentfulPage.edges[4].node
-  const portfolio = props.data.allContentfulPage.edges[0].node
-  const blog = props.data.allContentfulPage.edges[2].node
-  const about = props.data.allContentfulPage.edges[3].node
-  const contact = props.data.allContentfulPage.edges[1].node
+//position content
+  const contentful = props.data.allContentfulPage.edges
+  
+  const position = [ 
+    {sectionarr:"Home"},
+    {sectionarr:"Portfolio"},
+    {sectionarr:"About"},
+    {sectionarr:"Blog"},
+    {sectionarr:"Contact"},
+  ]
 
+  const array1 = contentful.map(cont => cont.node);
+  const array2 = position.map(pos => pos.sectionarr);
+  const array3 = []
+
+  const positioncontent = array2.filter(
+    (p) => {
+      let ok = false;
+      for (var i = 0; i < array1.length; i++) { 
+        if (array1[i].sectionName === p){
+          return(
+            array3.push(array1[i])
+          )
+        }
+      }
+      return ok;
+    })
+
+  console.log(positioncontent);
+
+
+  const home = array3[0]
+  const portfolio = array3[1]
+  const about = array3[2]
+  const blog = array3[3]
+  const contact = array3[4]
+
+
+  // // Projects
   const toggle = useCallback((id) => {
     const mProject = portfolio.projects.filter((item) => item.id === id)[0];
     setProject(mProject);
   });
 
-  console.log(!project)
-
-  const click = () => setProject(false)
+  const click = () => setProject(false);
 
   if (!project) {
     return(
       <Layout>
-        <SideBar sections={sections} resume={resume} authorName="MALEXCOB" link="/top" heading="SEO content writer and linguist" />
+        <SideBar 
+          sections={sections} resume={resume} 
+          authorName="MALEXCOB" 
+          link="/top" 
+          heading="SEO content writer and linguist"
+          linkedin={contact.linkedin} 
+          facebook={contact.facebook} 
+          instagram={contact.instagram} 
+          buttonlink={contact.buttonlink}
+        />
         <div id="main">
           <Home id="top" title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
           <Portfolio id="body" title={portfolio.title} images={portfolio.projects} onClick={toggle}/>
@@ -59,7 +101,7 @@ const IndexPage = (props) => {
             title={contact.title} 
             content={contact.content}
             buttontext={contact.buttontext}
-            likedin={contact.likedin} 
+            linkedin={contact.linkedin} 
             facebook={contact.facebook} 
             instagram={contact.instagram}        
             />
@@ -71,7 +113,18 @@ const IndexPage = (props) => {
   else {
     return(
       <Layout>
-        <SideBar className="activeport" onClick={click}  sections={sections} resume={resume} authorName="MALEXCOB" heading="SEO content writer and linguist" />
+        <SideBar 
+          className="activeport" 
+          onClick={click}  
+          sections={sections} 
+          resume={resume} 
+          authorName="MALEXCOB" 
+          heading="SEO content writer and linguist"   
+          linkedin={contact.linkedin} 
+          facebook={contact.facebook} 
+          instagram={contact.instagram}
+          buttonlink={contact.buttonlink}
+        />
         <div id="main">
           <Home id="top" onClickHome={click} title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
           <Project id="body" onClick={click} carousel={project.carousel} content={project.content} title={project.title}/>
@@ -81,15 +134,14 @@ const IndexPage = (props) => {
             title={contact.title} 
             content={contact.content}
             buttontext={contact.buttontext}
-            likedin={contact.likedin} 
+            linkedin={contact.linkedin} 
             facebook={contact.facebook} 
-            instagram={contact.instagram}        
+            instagram={contact.instagram}      
             />
         </div>
       </Layout>
-      )
+    )
   }
-
 };
 
 export default memo(IndexPage);
@@ -101,6 +153,7 @@ query {
       node {
         buttonlink
         subtitle
+        sectionName
         title
         buttontext
         linkedin
@@ -138,5 +191,4 @@ query {
     }
   }
 }
-
 `

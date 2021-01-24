@@ -14,63 +14,63 @@
   padding:5em 4em;
 
   @include breakpoint('wide') {
-      padding:5em 4em;
+    padding:5em 4em;
 
-      p {
-        font-size: 19px;
-        line-height: 1;
-        margin: -5px;
-      }
+    p {
+      font-size: 19px;
+      line-height: 1;
+      margin: -5px;
     }
+  }
 
-    @include breakpoint('normal') {
-      padding:5em 4em;
+  @include breakpoint('normal') {
+    padding:5em 4em;
 
-      p {
-        font-size: 19px;
-        line-height: 1;
-        margin: -5px;
-      }
+    p {
+      font-size: 19px;
+      line-height: 1;
+      margin: -5px;
     }
+  }
 
-    @include breakpoint('narrow') {
-      padding:5em 4em;
+  @include breakpoint('narrow') {
+    padding:5em 4em;
 
-      p {
-        font-size: 19px;
-        line-height: 1;
-        margin: -5px;
-      }
+    p {
+      font-size: 19px;
+      line-height: 1;
+      margin: -5px;
     }
+  }
 
-    @include breakpoint('<=narrower') {
-      padding:5em 2em;
+  @include breakpoint('<=narrower') {
+    padding:5em 2em;
 
-      p {
-        font-size: 18px;
-        line-height: 1.3;
-        margin: -2px;
-      }
+    p {
+      font-size: 18px;
+      line-height: 1.3;
+      margin: -2px;
     }
+  }
 
-    @include breakpoint('<=mobile') {
-      padding:5em 2em;
+  @include breakpoint('<=mobile') {
+    padding:5em 2em;
 
-      p {
-        font-size: 18px;
-        line-height: 1.3;
-        margin: -2px;
-      }
+    p {
+      font-size: 18px;
+      line-height: 1.3;
+      margin: -2px;
     }
+  }
 
 
   p {
-      color: white;
-      text-align: center;
+    color: white;
+    text-align: center;
   }
 
   .content-text {
-      margin-bottom: 2em;
+    margin-bottom: 2em;
   }
 }
 

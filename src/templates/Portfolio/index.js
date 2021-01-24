@@ -8,7 +8,6 @@ import ImageCard from '../../components/Core/ImageCard';
 import './portfolio.scss';
 
 const Portfolio = ({images = [], id, title, onClick}) => {
-  console.log(images)
   return (
     <section id={ id } className="one portfolio">
       <div className="containerportfolio">

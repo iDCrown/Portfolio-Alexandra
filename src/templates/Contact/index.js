@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 // components
 import renderRichText from '../../components/Base/RichText'
+import SocialLink from '../../components/Base/SocialLinks';
 
 // style
 import './contact.scss';
 
-import SocialLink from '../../components/Base/SocialLinks';
 
-const Contact = ({ id, title, content, facebook, instagram, linkedin  }) => {
+const Contact = ({ id, title, content, facebook, instagram, linkedin }) => {
   const ContentText = renderRichText(JSON.parse(content.raw));
   return(
-		<section id={ id } className="container-contact ">
+		<section id={ id } className="container-contact">
 			<div className="infocontent">
 				<h1 className="infocontent-h1">{title}</h1>
         <div className="infocontent-p">

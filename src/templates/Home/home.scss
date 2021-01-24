@@ -2,126 +2,128 @@
 @import '../../assets/sass/breakpoint.scss';
 
 .home {
-    display: flex;
-    justify-content: center;
-	align-items: center;
-	height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
-    &-img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        filter: brightness(0.7) blur(2px);
-    }
+  &-img {
+    width: 100%;
+    height: 100vh;
+  }
+
+  &-color {
+    background: #311f095e;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
 }
 
 .containerhome {
-    position:absolute;
+  position:absolute;
 
-    @include breakpoint('wide') {
-        width: 960px;
-      }
-  
-      @include breakpoint('normal') {
-        width: 920px;
-      }
-  
-      @include breakpoint('narrow') {
-        width: 80%;
-        padding: 0 2.7em;
-      }
-  
-      @include breakpoint('<=narrower') {
-        width: 100%;
-        padding: 0 2.5em;
-      }
-  
-      @include breakpoint('<=mobile') {
-        width: 100%;
-        padding: 0 40px;
-      }
-    
-			
-			
-	&-contenthome {
+  @include breakpoint('wide') {
+      width: 960px;
+    }
+
+    @include breakpoint('normal') {
+      width: 920px;
+    }
+
+    @include breakpoint('narrow') {
+      width: 80%;
+      padding: 0 2.7em;
+    }
+
+    @include breakpoint('<=narrower') {
+      width: 100%;
+      padding: 0 2.5em;
+    }
+
+    @include breakpoint('<=mobile') {
+      width: 100%;
+      padding: 0 40px;
+    }
+      
+  &-contenthome {
     margin: 0;
-		
+  
     @include breakpoint('wide') {
-			&-h1 {
-				font-size:  39px;
-			}
-						
-			&-h2 {
-				font-size: 22px;
-			}
+      &-h1 {
+        font-size:  40px;
+      }
+            
+      &-h2 {
+        font-size: 23px;
+      }
 
-			&-p {
-				font-size: 20px !important;
-			}
-		}
-		
-		@include breakpoint('normal') {
-			&-h1 {
-				font-size: 39px;
-			}
+      p {
+        font-size: 19px;
+      }
+    }
+    
+    @include breakpoint('normal') {
+      &-h1 {
+        font-size: 40px;
+      }
 
-			&-h2 {
-				font-size: 22px;
-			}
+      &-h2 {
+        font-size: 23px;
+      }
 
+      p {
+        font-size: 19px;
+      }
+    }
+    
+    @include breakpoint('narrow') {
+      &-h1 {
+        font-size: 38px;
+      }
 
-			&-p {
-				font-size: 20px;
-			}
-		}
-		
-		@include breakpoint('narrow') {
-			&-h1 {
-				font-size: 38px;
-			}
+      &-h2 {
+        font-size: 21px;
+      }
 
-			&-h2 {
-				font-size: 21px;
-			}
+      p {
+        font-size: 19px;
+      }
+    }
+    
+    @include breakpoint('<=narrower') {
+      &-h1 {
+        font-size: 36px;
+      }
 
-			&-p {
-				font-size: 19px;
-			}
-		}
-		
-		@include breakpoint('<=narrower') {
-			&-h1 {
-				font-size: 36px;
-			}
+      &-h2 {
+        font-size: 19px;
+      }
 
-			&-h2 {
-				font-size: 19px;
-			}
+      p {
+        font-size: 18px;
+      }
+    }
+    
+    @include breakpoint('<=mobile') {
+      &-h1 {
+        font-size: 31px;
+      }
 
-			&-p {
-				font-size: 18px;
-			}
-		}
-		
-		@include breakpoint('<=mobile') {
-			&-h1 {
-				font-size: 31px;
-			}
+      &-h2 {
+        font-size: 20px;
+      }
 
-			&-h2 {
-				font-size: 20px;
-			}
-
-			&-p {
-				font-size: 18px;
-			}
-		}
-		
-		
+      p {
+        font-size: 18px;
+      }
+    }
+    
+    
     &-h2 {
-			font-weight: 400;
-			line-height: 45px;
-			letter-spacing: normal;
+      font-weight: 400;
+      line-height: 45px;
+      letter-spacing: normal;
       color: white;
       margin: 0;
       text-align: center;
@@ -130,43 +132,44 @@
     &-h1 {
       color: white;
       margin: 0px 0 20px;
-			font-weight: 600;
+      font-weight: 600;
     }
-		
+    
     &-hr {
-			width: 100%;
-			border: 1px solid;
-			transition: 1s cubic-bezier(0.4, 0, 0.23, 0.97) ;
-			animation-name: recta;
-			animation-duration: 2s;
-			color: white;
-			animation-iteration-count: 1;
+      width: 100%;
+      border: 1px solid;
+      transition: 1s cubic-bezier(0.4, 0, 0.23, 0.97);
+      animation-name: recta;
+      animation-duration: 2s;
+      color: white;
+      animation-iteration-count: 1;
     }
-		
-    &-p {
+    
+    p {
       text-align: center;
       margin: 16px;
-			margin: .7em 0 0 0;
-			color: white;
-			margin: 1em 0 0 0;    
-		}
-	}
+      text-shadow: 0px 1px rgb(116, 116, 116);
+      margin: .7em 0 0 0;
+      color: white;
+      margin: 1em 0 0 0;    
+    }
+  }
 }
 
 a:hover {
-    background: transparent;
+  background: transparent;
 }
 
 a {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 @keyframes recta {
-    0% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
 
-    100% {
-        width: 919px;
-    }
+  100% {
+    width: 919px;
+  }
 }
