@@ -118,13 +118,13 @@ var plugins = [{
     "background_color": "#663399",
     "theme_color": "#663399",
     "display": "standalone",
-    "icon": "src/assets/img/website-icon.png",
+    "icon": "src/assets/img/demo2.png",
     "legacy": true,
     "theme_color_in_head": true,
     "cache_busting_mode": "query",
     "crossOrigin": "anonymous",
     "include_favicon": true,
-    "cacheDigest": "70fd50585331c0dc3589869db0603c35"
+    "cacheDigest": "7a1e057027166c60d016413d488d6eb5"
   }
 }, {
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-offline/gatsby-ssr */ "./node_modules/gatsby-plugin-offline/gatsby-ssr.js"),

@@ -1,18 +1,16 @@
 import React, { useState, memo } from 'react';
-import Footer from './Footer';
 import Header from './Header';
 import Nav from './Nav';
 import TopNav from './TopNav';
 import config from '../../../config';
+import SocialLink from '../Base/SocialLinks'
 import PropTypes from 'prop-types'
 
- function SideBar({ sections = [], resume = {}, authorName, heading, onClick, className  }) {
+ function SideBar({ sections = [], resume = {}, authorName, heading, onClick, className, facebook, instagram, linkedin, buttonlink  }) {
   const [headerOpen, toggleHeader] = useState(false);
 
-  console.log(headerOpen)
-
   return (
-    <div  className={`${headerOpen ? 'header-visible' : ' '}`}>
+    <div className={`${headerOpen ? 'header-visible' : ' '}`}>
       <TopNav
         title={config.authorName}
         onMenuClick={() => toggleHeader(!headerOpen)}
@@ -32,7 +30,11 @@ import PropTypes from 'prop-types'
           />
           <Nav className={className} sections={sections} resume={resume} onClick={onClick} />
         </div>
-        <Footer socialLinks={config.socialLinks} />
+        <hr className="menuhr"/>
+        <div className="headericons">
+          <SocialLink iconstyle="headericons-icon" linkedin={linkedin} facebook={facebook} instagram={instagram} />
+        </div>
+        <p className="headerby">{buttonlink}</p>
       </div>
     </div>
   );
@@ -41,6 +43,10 @@ import PropTypes from 'prop-types'
 SideBar.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
+  linkedin: PropTypes.string,
+  facebook: PropTypes.string,
+  instagram: PropTypes.string,
+  buttonlink: PropTypes.string,
 }
 
 export default memo(SideBar);

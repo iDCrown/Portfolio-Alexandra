@@ -1,8 +1,7 @@
 import React from 'react';
 import Scroll from '../Scroll'
 
-
-export default function Footer({ title, heading }) {
+export default function Header({ title, heading }) {
   return (
     <div id="logo">
       <Scroll type="id" element={ 'top' }>

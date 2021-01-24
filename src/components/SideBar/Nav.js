@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Scrollspy from 'react-scrollspy';
 import Scroll from '../Scroll';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
  function Nav({ sections = [], resume = {}, onClick, className }) {
-   console.log()
 
   return (
     <nav id="nav">
@@ -44,4 +43,4 @@ Nav.propTypes = {
   className: PropTypes.string,
 }
 
-export default Nav
+export default memo(Nav);

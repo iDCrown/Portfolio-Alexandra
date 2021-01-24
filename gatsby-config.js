@@ -1,8 +1,5 @@
-const dotenv = require(`dotenv`)
+require("dotenv").config()
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
-}
 const config = require('./config');
 
 module.exports = {
@@ -11,6 +8,13 @@ module.exports = {
     title: config.siteTitle,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `1zhm0uzkwbpr`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -26,13 +30,6 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `1zhm0uzkwbpr`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      }
-    },
     `@contentful/gatsby-transformer-contentful-richtext`
   ],
 };

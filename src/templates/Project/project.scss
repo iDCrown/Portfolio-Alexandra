@@ -71,6 +71,7 @@
     letter-spacing: 2px;
     font-size: 27px;
     cursor: pointer;
+    
     &:hover > .volver  {
       animation: mover 1s;
       animation-iteration-count: inherit !important;
