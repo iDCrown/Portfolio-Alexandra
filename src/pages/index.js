@@ -75,7 +75,7 @@ const IndexPage = (props) => {
   const toggle = useCallback((id) => {
     const mProject = portfolio.projects.filter((item) => item.id === id)[0];
     setProject(mProject);
-  });
+  }, [portfolio]);
 
   const click = () => setProject(false);
 
