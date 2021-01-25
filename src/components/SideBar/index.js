@@ -34,7 +34,7 @@ import PropTypes from 'prop-types'
         <div className="headericons">
           <SocialLink iconstyle="headericons-icon" linkedin={linkedin} facebook={facebook} instagram={instagram} />
         </div>
-        <p className="headerby">{buttonlink}</p>
+        {/* <p className="headerby">{buttonlink}</p> */}
       </div>
     </div>
   );

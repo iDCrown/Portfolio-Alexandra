@@ -90,7 +90,7 @@ const IndexPage = (props) => {
           linkedin={contact.linkedin} 
           facebook={contact.facebook} 
           instagram={contact.instagram} 
-          buttonlink={contact.buttonlink}
+          // buttonlink={contact.buttonlink}
         />
         <div id="main">
           <Home id="top" title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
@@ -123,7 +123,7 @@ const IndexPage = (props) => {
           linkedin={contact.linkedin} 
           facebook={contact.facebook} 
           instagram={contact.instagram}
-          buttonlink={contact.buttonlink}
+          // buttonlink={contact.buttonlink}
         />
         <div id="main">
           <Home id="top" onClickHome={click} title={home.title} subtitle={home.subtitle} buttontext={home.buttontext} image={home.images[0].file.url} content={home.content}/>
