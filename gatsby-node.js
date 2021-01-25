@@ -34,7 +34,6 @@ exports.createPages = ({ graphql, actions }) => {
       createPage({
         path: `${edge.node.slug}`,
         component: portfolioPage,
-      
       })
     })
   })
