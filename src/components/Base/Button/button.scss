@@ -10,6 +10,8 @@
   transition: all 0.5s;
   border-radius: 50px;
   width: auto;
+  outline: none !important;
+  outline-width: 0 !important;
 	position: relative;
 
   &-icon {

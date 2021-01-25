@@ -761,6 +761,8 @@ button,
 					position: relative;
 					display: block;
 					font-size: 0.8em;
+					outline: none !important;
+    				outline-width: 0 !important;
 
 					&:before {
 						position: absolute;
@@ -774,6 +776,11 @@ button,
 			}
 		}
 	}
+}
+
+span {
+	outline: none !important;
+    outline-width: 0 !important;
 }
 
 /* Footer */
