@@ -48,6 +48,10 @@
     margin: 17px 0;
     line-height: 0;
     font-size: 19px;
+
+    @media (max-width:331px) {
+      float:none;
+    }
   }
 }
 

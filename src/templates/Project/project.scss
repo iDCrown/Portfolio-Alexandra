@@ -8,6 +8,10 @@
     grid-template-columns: repeat(2, 58% 42%);
     grid-gap: 1em;
     padding: 2.7em 1em 2em 2em;
+
+    @media (max-height:856px) {
+      height: auto;
+    }
   }
 
   @include breakpoint('normal') {
@@ -16,6 +20,10 @@
     grid-template-columns: repeat(2, 58% 42%);
     grid-gap: 1em;
     padding: 2.7em 1em 2em 2em;
+
+    @media (max-height:856px) {
+      height: auto;
+    }
   }
 
   @include breakpoint('narrow') {
@@ -37,6 +45,7 @@
     display: flex;
     flex-direction: column;
     padding: 3em 1em 4em 2em;
+
   }
 
   &-contentext {
@@ -64,45 +73,100 @@
     }
   }
   
-  
+  .title {
+    outline: none !important;
+    outline-width: 0 !important;
 
-  .h1  {
+    @include breakpoint('wide') {
+      margin-bottom: 0;
+      
+      &:hover > .volver  {
+        animation: mover 1s;
+        animation-iteration-count: inherit !important;
+        animation-fill-mode: forwards;
+        transition: all 0.5s;
+      }
+    }
+
+    @include breakpoint('normal') {
+      margin-bottom: 0;
+
+      &:hover > .volver  {
+        animation: mover 1s;
+        animation-iteration-count: inherit !important;
+        animation-fill-mode: forwards;
+        transition: all 0.5s;
+      }
+    }
+
+    @include breakpoint('narrow') {
+      margin-bottom: 0;
+
+      &:hover > .volver  {
+        animation: mover 1s;
+        animation-iteration-count: inherit !important;
+        animation-fill-mode: forwards;
+        transition: all 0.5s;
+      }
+    }
+
+    @include breakpoint('<=narrower') {
+      margin-bottom: 27px;
+
+      &:hover > .volver  {
+        animation:none;
+        animation-iteration-count: none;
+        animation-fill-mode: none;
+        transition: none;
+      }
+    }
+
+    @include breakpoint('<=mobile') {
+      margin-bottom: 40px;
+
+      &:hover > .volver  {
+        animation:none;
+        animation-iteration-count: none;
+        animation-fill-mode: none;
+        transition: none;
+      }
+
+      @media (max-height:400px) {
+        margin-bottom: 90px;
+      }
+    }
+  }
+
+  h1  {
     text-align: initial;
     letter-spacing: 2px;
     font-size: 27px;
     cursor: pointer;
-    
-    &:hover > .volver  {
-      animation: mover 1s;
-      animation-iteration-count: inherit !important;
-      animation-fill-mode: forwards;
-      transition: all 0.5s;
-    
+
+    @include breakpoint('wide') {
+      font-size: 26px;
+      margin: 0em 0 1.7em 60px;
     }
-      @include breakpoint('wide') {
-        font-size: 26px;
-        margin: 0em 0 1.7em 0;
-      }
-  
-      @include breakpoint('normal') {
-        font-size: 26px;
-        margin: 0em 0 1.7em 0;
-      }
-  
-      @include breakpoint('narrow') {
-        font-size: 26px;
-        margin: 0em 0 1.7em 0;
-      }
-  
-      @include breakpoint('<=narrower') {
-        font-size: 25px;
-        margin: 0em 0 .8em 0;
-      }
-  
-      @include breakpoint('<=mobile') {
-        font-size: 23px;
-        margin: 0em 0 -2em 0;
-      }
+
+    @include breakpoint('normal') {
+      font-size: 26px;
+      margin: 0em 0 1.7em 60px;
+    }
+
+    @include breakpoint('narrow') {
+      font-size: 26px;
+      margin: 0em 0 1.7em 60px;
+    }
+
+    @include breakpoint('<=narrower') {
+      font-size: 26px;
+      margin: 0em 0 .8em 33px;
+    }
+
+    @include breakpoint('<=mobile') {
+      font-size: 26px;
+      margin: 0em 0 -2em 33px;
+    }
   }
 
   h2 {
@@ -120,13 +184,45 @@
   }
 
   .volver {
-    width: 46px;
     float: left;
     cursor: pointer;
-    animation: movereverse 1s;
-    transition: all 0.5s;
+    color: rgb(32, 32, 32);
     font-size: 35px;
-    animation-fill-mode:both;
+
+    @include breakpoint('wide') {
+      animation: movereverse 1s;
+      transition: all 0.5s;
+      animation-fill-mode:both;
+      width: 46px;
+    }
+
+    @include breakpoint('normal') {
+      animation: movereverse 1s;
+      transition: all 0.5s;
+      animation-fill-mode:both;
+      width: 46px;
+    }
+
+    @include breakpoint('narrow') {
+      animation: movereverse 1s;
+      transition: all 0.5s;
+      animation-fill-mode:both;
+      width: 46px;
+    }
+
+    @include breakpoint('<=narrower') {
+      animation:none;
+      transition: none;
+      animation-fill-mode:none;
+      width: 0;
+    }
+
+    @include breakpoint('<=mobile') {
+      animation:none;
+      transition: none;
+      animation-fill-mode:none;
+      width: 0;
+    }
     
     &:hover {
       animation: mover 1s;
@@ -134,7 +230,7 @@
       animation-fill-mode: forwards;
       transition: all 0.5s;
     }
-   
+
     @keyframes mover {
       0% {
         transform: translateX(12px);

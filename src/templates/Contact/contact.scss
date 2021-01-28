@@ -1,40 +1,55 @@
 @import '../../assets/sass/breakpoint.scss';
 @import '../../assets/sass/colors.scss'; 
 
+
 .container-contact {
   display: flex;
   justify-content: center;
-  padding: 3em;
   background-color: $cream-color;
-
+  
   @include breakpoint('wide') {
     padding: 3em;
     height: 100vh;
+
+    @media (max-height:856px) {
+      height: auto;
+    }
   }
 
   @include breakpoint('normal') {
     padding: 3em;
     height: 100vh;
+
+    @media (max-height:856px) {
+      height: auto;
+    }
   }
 
   @include breakpoint('narrow') {
     padding: 3em;
-    height: auto;
+    height: 100vh;
+    
+    @media (max-height:856px) {
+      height: auto;
+    }
+
+    @media (max-width:1470px)  {
+      height: auto;
+    }
   }
 
   @include breakpoint('<=narrower') {
-    padding: 3em;
+    padding: 4em 2em 4em 2em;
     height: auto;
   }
 
   @include breakpoint('<=mobile') {
-    padding: 3em;
+    padding: 4em 1em 4em 1em;
     height: auto;
   }
 }
 
 .infocontent {
-  margin: 81px auto 5px auto;
   max-width: 100%;
   width: 477px;
   height: 80%;
@@ -42,14 +57,16 @@
   display: flex;
   letter-spacing: 0.2px;
   flex-direction: column;
-  padding: 1em 2em;
   box-shadow: 0 0 20px 0px #00000029;
 
   @include breakpoint('wide') {
     width: 477px;
+    margin: 81px auto 5px auto;
+    padding: 1em 2em;
 
     &-h1 {
       font-size: 33px;
+      margin: 2.4em 0 1em 0;
     }
 
     h3 {  
@@ -63,9 +80,12 @@
 
   @include breakpoint('normal') {
     width: 477px;
+    margin: 81px auto 5px auto;
+    padding: 1em 2em;
 
     &-h1 {
       font-size: 33px;
+      margin: 2.4em 0 1em 0;
     }
 
     h3 {
@@ -79,9 +99,12 @@
 
   @include breakpoint('narrow') {
     width: 635px;
+    padding: 5em 4em;
+    margin: 80px auto 5px auto;
 
     &-h1 {
       font-size: 33px;
+      margin:0em 0 1em 0;
     }
 
     h3 {
@@ -95,9 +118,12 @@
 
   @include breakpoint('<=narrower') {
     width: 635px;
+    margin: 0 auto 5px auto;
+    padding: 3em 2em;
 
     &-h1 {
       font-size: 32px;
+      margin: 0 0 1em 0;
     }
 
     h3 {
@@ -111,9 +137,12 @@
 
   @include breakpoint('<=mobile') {
     width: 635px;
+    margin: 0 auto 5px auto;
+    padding: 3em 2em;
 
     &-h1 {
       font-size: 31px;
+      margin: 0 0 1em 0;
     }
 
     h3 {
@@ -126,7 +155,6 @@
   }
 
   &-h1 {
-    margin: 2.4em 0 1em 0;
     color: #1e1e1e;
     text-transform: uppercase;
     letter-spacing: 3px;

@@ -12,9 +12,8 @@ import './home.scss'
 const Home = ({ id, title, subtitle, buttontext, image, content, onClickHome }) => {
   const ContentText = renderRichText(JSON.parse(content.raw))
   return(
-    <section id={ id } className=" cover home"> 
+    <section id={ id } className="home"> 
       <img className="home-img" src={image} alt=""/>
-      <div className="home-color"></div>
       <div className="containerhome">
         <div className="containerhome-contenthome">
           <h2 className="containerhome-contenthome-h2">

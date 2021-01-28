@@ -1,81 +1,99 @@
 @import '../../assets/sass/breakpoint.scss';
 
 .portfolio{
-	@include breakpoint('wide') {
-		height: 100vh;
-	}
+  @include breakpoint('wide') {
+    height: 100vh;
+    
+    @media (max-height:856px) {
+      height: auto;
+    }
+  }
 
-	@include breakpoint('normal') {
-		height: 100vh;
-	}
+  @include breakpoint('normal') {
+    height: 100vh;
+    
+    @media (max-height:856px) {
+      height: auto;
+    }
+  }
 
-	@include breakpoint('narrow') {
-		height: 100vh;
-	}
+  @include breakpoint('narrow') {
+    height: 100vh;
 
-	@include breakpoint('<=narrower') {
-		height: auto;
-	}
+    @media (max-height:1366px) {
+      height: auto;
+      padding: 4em 3em;
+    }
 
-	@include breakpoint('<=mobile') {
-		height: auto;
-	}
+    @media (max-height:856px) {
+      height: auto;
+      padding: 2em;
+    }
+  }
+
+  @include breakpoint('<=narrower') {
+    height: auto;
+  }
+
+  @include breakpoint('<=mobile') {
+    height: auto;
+  }
 }
 
 .containerCard {
-	justify-content: center;
-	display: grid;
-	gap: 21px;
-	grid-template-columns: repeat(auto-fit, 260px);
+  justify-content: center;
+  display: grid;
+  gap: 21px;
+  grid-template-columns: repeat(auto-fit, 260px);
 }
 
 .containerportfolio {
-	margin: 0 auto;
-	max-width: 100%;
-	width:1060px;
-	padding: 4.6em 3em 3em 3em;
+  margin: 0 auto;
+  max-width: 100%;
+  width:1060px;
+  padding: 4.6em 3em 3em 3em;
 
-		@include breakpoint('wide') {
-			width: 1060px;
-			padding: 4.6em 3em 3em 3em;
-		}
+  @include breakpoint('wide') {
+    width: 1060px;
+    padding: 4.6em 3em 3em 3em;
+  }
 
-		@include breakpoint('normal') {
-			width: 1100px;
-			padding: 4.6em 3em 3em 3em;
-		}
+  @include breakpoint('normal') {
+    width: 1100px;
+    padding: 4.6em 3em 3em 3em;
+  }
 
-		@include breakpoint('narrow') {
-			width: 100%;
-			padding: 4.6em 3em 3em 3em;
-		}
+  @include breakpoint('narrow') {
+    width: 100%;
+    padding: 4.6em 3em 3em 3em;
+  }
 
-		@include breakpoint('<=narrower') {
-			width: 100%;
-			padding: 6.6em 3em 7em 3em;
-		}
+  @include breakpoint('<=narrower') {
+    width: 100%;
+    padding: 6.6em 3em 7em 3em;
+  }
 
-		@include breakpoint('<=mobile') {
-			width: 100%;
-			padding: 6.6em 3em 7em 3em;
-		}
+  @include breakpoint('<=mobile') {
+    width: 100%;
+    padding: 6.6em 3em 7em 3em;
+  }
 
-	&-h1 {
-		margin: 6px 0 27px;
-		color: black;
-		font-size: 33px;
-		text-transform: uppercase;
-		letter-spacing: 3px;
-	}
-	
-	&-icon {
-		width: 17px;
-		margin:10px;
-	}
+  &-h1 {
+    margin: 6px 0 27px;
+    color: black;
+    font-size: 33px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  &-icon {
+    width: 17px;
+    margin:10px;
+  }
 
-	hr {
-		margin: 25px auto 34px auto;
-		border: 1px solid rgb(0, 0, 0);
-		width: 50px;
-	}
+  hr {
+    margin: 25px auto 34px auto;
+    border: 1px solid rgb(0, 0, 0);
+    width: 50px;
+  }
 }

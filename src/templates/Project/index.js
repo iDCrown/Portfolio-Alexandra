@@ -14,12 +14,12 @@ const Project = ({ carousel, content, title, id, onClick }) => {
   return(
     <section id={id} className="project">
 			<div className="project-carousel">
-      <span role = "button" tabIndex={0} onKeyDown={onClick} onClick={onClick} >
+      <div className="title" role ="button" tabIndex={0} onKeyDown={onClick} onClick={onClick} >
+        <i className="volver fa fa-angle-double-left"/>
         <h1 className="h1">
-          <span className="volver fa fa-angle-double-left"/>
           {title}
         </h1>
-      </span>
+      </div>
         <Carousel images={carousel} />
       </div>
       <div className="project-contentext">
