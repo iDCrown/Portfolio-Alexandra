@@ -23,7 +23,7 @@
     padding: 2em;
     height: 100vh;
 
-    @media (max-width:1470px)  {
+    @media (max-width:1491px)  {
       height: auto;
     }
 
@@ -38,6 +38,10 @@
     grid-template-columns: repeat(2, 65% 36%);
     padding: 1em 2em;
     height: 104vh;
+
+    @media (max-width:1491px)  {
+      height: auto;
+    }
 
     @media (max-height:1366px) {
       height: auto;
@@ -114,7 +118,7 @@
   }
 
   @include breakpoint('narrow') {
-    margin-bottom: 70px;
+    margin-bottom: 24px;
     padding: 0 2.5em;
 
     &-h1 {
@@ -132,7 +136,7 @@
   }
 
   @include breakpoint('<=narrower') {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
     padding: 0 2.5em;
 
     &-h1 {
@@ -186,7 +190,10 @@
 
   p {
     text-align: justify;
-    margin: -6px;
+    margin: 14px 0;
+    @-moz-document url-prefix() {
+      margin: 14px 0;
+    }
     color: #232323;
     line-height: 31px;
   }

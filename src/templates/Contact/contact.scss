@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   background-color: $cream-color;
+  align-items: center;
   
   @include breakpoint('wide') {
     padding: 3em;
@@ -13,6 +14,7 @@
 
     @media (max-height:856px) {
       height: auto;
+      padding: 6em;
     }
   }
 
@@ -22,6 +24,7 @@
 
     @media (max-height:856px) {
       height: auto;
+      padding: 6em;
     }
   }
 
@@ -31,20 +34,22 @@
     
     @media (max-height:856px) {
       height: auto;
+      padding: 6em;
     }
 
     @media (max-width:1470px)  {
       height: auto;
+      padding: 6em;
     }
   }
 
   @include breakpoint('<=narrower') {
-    padding: 4em 2em 4em 2em;
+    padding: 6em 2em;
     height: auto;
   }
 
   @include breakpoint('<=mobile') {
-    padding: 4em 1em 4em 1em;
+    padding: 6em 1em;
     height: auto;
   }
 }
@@ -52,21 +57,31 @@
 .infocontent {
   max-width: 100%;
   width: 477px;
-  height: 80%;
+  height: 82%;
   background-color: white;
   display: flex;
   letter-spacing: 0.2px;
   flex-direction: column;
   box-shadow: 0 0 20px 0px #00000029;
 
+
+  @-moz-document url-prefix() {
+    height: 80%;
+  }
+
   @include breakpoint('wide') {
     width: 477px;
-    margin: 81px auto 5px auto;
-    padding: 1em 2em;
+    margin: 0px auto 5px auto;
+    padding: 5em 2em;
+
+    @media (min-height:1020px) {
+     height: 70%;
+     width: 500px;
+    }
 
     &-h1 {
       font-size: 33px;
-      margin: 2.4em 0 1em 0;
+      margin: 0 0 1em 0;
     }
 
     h3 {  
@@ -80,12 +95,16 @@
 
   @include breakpoint('normal') {
     width: 477px;
-    margin: 81px auto 5px auto;
-    padding: 1em 2em;
+    margin: 0px auto 5px auto;
+    padding: 5em 2em;
+    
+    @-moz-document url-prefix() {
+      padding: 5em 2em;
+    }
 
     &-h1 {
       font-size: 33px;
-      margin: 2.4em 0 1em 0;
+      margin: 0 0 1em 0;
     }
 
     h3 {
@@ -99,8 +118,8 @@
 
   @include breakpoint('narrow') {
     width: 635px;
-    padding: 5em 4em;
-    margin: 80px auto 5px auto;
+    margin: 0px auto 5px auto;
+    padding: 5em 3em;
 
     &-h1 {
       font-size: 33px;
@@ -119,7 +138,7 @@
   @include breakpoint('<=narrower') {
     width: 635px;
     margin: 0 auto 5px auto;
-    padding: 3em 2em;
+    padding: 4em 2em;
 
     &-h1 {
       font-size: 32px;

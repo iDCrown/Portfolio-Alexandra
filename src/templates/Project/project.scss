@@ -15,7 +15,7 @@
   }
 
   @include breakpoint('normal') {
-    height: 100vh;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, 58% 42%);
     grid-gap: 1em;
@@ -30,7 +30,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 2.7em 1em 2em 2em;
+    padding: 4em 1em 3em 2em;
   }
 
   @include breakpoint('<=narrower') {
@@ -174,14 +174,29 @@
   }
 
   p {
-   margin: 0;
+   margin: 0px 0;
    line-height: 20px;
    font-size: 16px;
   }
 
   ul {
-    margin: 0em ;
+    margin: 0em;
+    
+    li {
+      padding:0px 0 ;
+      align-items: center;
+      font: -moz-workspace;
+      font-size: 19px;
+
+    }
   }
+  @-moz-document url-prefix() {
+    ul li p{
+      margin: 12px 0;
+    }
+  }
+}
+
 
   .volver {
     float: left;
@@ -249,5 +264,5 @@
       }
     }
   }
-}
+
 

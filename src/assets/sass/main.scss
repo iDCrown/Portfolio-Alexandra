@@ -159,12 +159,23 @@ body {
 	line-height: 1.75em;
 	color: #888;
 	overflow-y: scroll;
+	scrollbar-width: none;
 
 	&::-webkit-scrollbar {
 		width: 8px;     /* Tamaño del scroll en vertical */
-		height: 8px;    /* Tamaño del scroll en horizontal */
+		height: 10px;    /* Tamaño del scroll en horizontal */
 		display: none;  /* Ocultar scroll */
 	}
+
+	&::-moz-scrollbar {
+		width: 8px;   
+		height: 8px; 
+		display: none;
+	}  
+	&::-moz-scrollbar-thumb {
+        height: 50px;
+        background-color: #666;            /* Up/Down slider background*/
+    }    
 
 	// Stops initial animations until page loads.
 	&.is-preload {
@@ -630,13 +641,21 @@ button,
 	width: 333px;
 
 	&::-webkit-scrollbar-thumb {
-		background:#414141;
+		background:#797979;
 		border-radius: 4px;
 	}
 
 	&::-webkit-scrollbar {
 		width: 5px;     /* Tamaño del scroll en vertical */
 		height: 0px;    /* Tamaño del scroll en horizontal */
+	}
+	&::-moz-scrollbar {
+		width: 5px;    
+		height: 0px;
+	}  
+	&::-moz-scrollbar-thumb {    
+		background: #797979;
+		border-radius: 4px;
 	}
 
 	.top {
@@ -890,12 +909,7 @@ span {
 	body, input, textarea, select {
 		font-size: 16pt;
 		&::-webkit-scrollbar-thumb {
-			background:$mustard-color;
-			border-radius: 4px;
-		}
-
-		&::-webkit-scrollbar-thumb:hover {
-			background: $mustard-color;
+			background:#797979;
 			border-radius: 4px;
 		}
 
@@ -903,6 +917,16 @@ span {
 			width: 8px;     /* Tamaño del scroll en vertical */
 			height: 8px;    /* Tamaño del scroll en horizontal */
 			display: none;  /* Ocultar scroll */
+		}
+
+		&::-moz-scrollbar {
+			width: 5px;    
+			height: 0px;
+			display: none; 
+		}  
+		&::-moz-scrollbar-thumb {    
+			background:#797979;
+			border-radius: 4px;
 		}
 }
 
@@ -943,6 +967,11 @@ span {
 			height: 8px;    /* Tamaño del scroll en horizontal */
 			display: none;  /* Ocultar scroll */
 		}
+		&::-moz-scrollbar {
+			width: 5px;    
+			height: 0px;
+			display: none;
+		}  
 	}
 
 	/* Main */
@@ -969,19 +998,24 @@ span {
 		font-size: 16pt;
 		overflow-y: scroll;
 		&::-webkit-scrollbar-thumb {
-			background:$mustard-color;
-			border-radius: 4px;
-		}
-
-		&::-webkit-scrollbar-thumb:hover {
-			background: $mustard-color;
+			background:#797979;
 			border-radius: 4px;
 		}
 
 		&::-webkit-scrollbar {
-			width: 8px;     /* Tamaño del scroll en vertical */
+			width: 5px;     /* Tamaño del scroll en vertical */
 			height: 8px;
 			display: none;
+		}
+
+		&::-moz-scrollbar {
+			width: 5px;    
+			height: 0px;
+			display: none;
+		}  
+		&::-moz-scrollbar-thumb {    
+			background:#797979;
+			border-radius: 4px;
 		}
 	}
 
@@ -1007,19 +1041,23 @@ span {
 			background: #222729 url('../images/overlay.png');
 			box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.125);
 			&::-webkit-scrollbar-thumb {
-				background:$mustard-color;
-				border-radius: 4px;
-			}
-	
-			&::-webkit-scrollbar-thumb:hover {
-				background: $mustard-color;
+				background:#797979;
 				border-radius: 4px;
 			}
 	
 			&::-webkit-scrollbar {
-				width: 8px;     /* Tamaño del scroll en vertical */
+				width: 5px;     /* Tamaño del scroll en vertical */
 				height: 8px;    /* Tamaño del scroll en horizontal */
 				  /* Ocultar scroll */
+			}
+
+			&::-moz-scrollbar {
+				width: 5px;    
+				height: 0px;
+			}  
+			&::-moz-scrollbar-thumb {    
+				background:#797979;
+				border-radius: 4px;
 			}
 
 			.top {
@@ -1112,7 +1150,7 @@ span {
 	html, body {
 		overflow-y: scroll;
 		&::-webkit-scrollbar-thumb {
-			background:$mustard-color;
+			background:#797979;
 			border-radius: 4px;
 		}
 		.container::-webkit-scrollbar-track {
@@ -1120,15 +1158,18 @@ span {
 			border-radius: 4px;
 		}
 
-
-		&::-webkit-scrollbar-thumb:hover {
-			background: $mustard-color;
-			border-radius: 4px;
-		}
-
 		&::-webkit-scrollbar {
 			width: 8px;     /* Tamaño del scroll en vertical */
 			height: 8px;    /* Tamaño del scroll en horizontal */ /* Ocultar scroll */
+		}
+
+		&::-moz-scrollbar {
+			width: 5px;    
+			height: 0px;
+		}  
+		&::-moz-scrollbar-thumb {    
+			background:#797979;
+			border-radius: 4px;
 		}
 	}
 
@@ -1291,18 +1332,26 @@ span {
 	body, input, textarea, select {
 		font-size: 14pt;
 		&::-webkit-scrollbar-thumb {
-			background:$mustard-color;
-			border-radius: 4px;
-		}
-
-		&::-webkit-scrollbar-thumb:hover {
-			background: $mustard-color;
+			background:#797979;
 			border-radius: 4px;
 		}
 
 		&::-webkit-scrollbar {
 			width: 8px;     /* Tamaño del scroll en vertical */
 			height: 8px;    /* Tamaño del scroll en horizontal */
+		}
+
+		&::-moz-scrollbar {
+			width: 12px;
+		}
+		&::-moz-scrollbar-track {
+		-moz-box-shadow: inset 0 0 6px #fff;
+		background:#000;
+		}
+		&::-moz-scrollbar-thumb {
+		border-radius: 10px;
+		-moz-box-shadow: inset 0 0 6px #fff;
+		background:#82ca0f;
 		}
 	}
 
